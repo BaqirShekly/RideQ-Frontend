@@ -1,0 +1,185 @@
+.real-time-tracking {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.real-time-tracking h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.tracking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tracking-map {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 40px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tracking-map::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
+
+.driver-icon {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: pulse 2s infinite;
+}
+
+.direction-arrow {
+  font-size: 4rem;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+.driver-label {
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.tracking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.tracking-note {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.tracking-placeholder {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.loading-spinner {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tracking-placeholder p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .real-time-tracking {
+    padding: 15px;
+  }
+
+  .tracking-map {
+    padding: 30px;
+    min-height: 150px;
+  }
+
+  .direction-arrow {
+    font-size: 3rem;
+  }
+
+  .driver-label {
+    font-size: 1rem;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

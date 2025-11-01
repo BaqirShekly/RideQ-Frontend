@@ -1,0 +1,120 @@
+.payment-modal {
+  max-width: 600px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.payment-summary {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+}
+
+.payment-summary h4 {
+  margin: 0 0 16px 0;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.summary-row:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.holiday-discount {
+  color: #92400e;
+  font-weight: 600;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  margin-top: 12px;
+  border-top: 2px solid var(--primary-purple);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-purple);
+}
+
+.card-element-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-element-container label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.card-element-container .StripeElement {
+  padding: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.card-element-container .StripeElement--focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.card-element-container .StripeElement--invalid {
+  border-color: #ef4444;
+}
+
+.error-message {
+  padding: 12px 16px;
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.payment-actions .btn {
+  flex: 1;
+  max-width: 200px;
+}
+
+.secure-badge {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 13px;
+  padding: 12px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+@media (max-width: 768px) {
+  .payment-actions {
+    flex-direction: column;
+  }
+  
+  .payment-actions .btn {
+    max-width: 100%;
+  }
+}
